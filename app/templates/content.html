@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Introduzca datos</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag()}}
+    <p>
+        {{form.texto.label}}<br>
+        {{form.texto(size=32)}}
+        {% for error in form.texto.errors %}
+        <span style="color: red";>[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.boolean.label}} {{form.boolean()}}
+    </p>
+    <p>{{form.submit()}}</p>
+</form>
+
+<p><a href="{{ url_for('logout') }}">¡Cerrar sesion!</a></p>
+
+{% endblock %}

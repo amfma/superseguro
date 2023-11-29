@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagina bien segura</title>
+    </head>
+    <body>
+    <div>
+    {% with messages = get_flashed_messages()%}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %} {% endblock %}
+    </body>
+</html>
